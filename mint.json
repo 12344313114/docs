@@ -19,6 +19,14 @@
     "name": "Discord",
     "url": "https://discord.gg/WBDmTNHqSz"
   },
+  "navigation": [
+    {
+      "group": "Welcome",
+      "pages": [
+        "welcome"
+      ]
+    }
+  ],
   "footerSocials": {
     "Discord": "https://discord.gg/WBDmTNHqSz"
   }
