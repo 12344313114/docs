@@ -25,6 +25,12 @@
       "pages": [
         "welcome"
       ]
+    },
+    {
+      "group": "FileSystem API",
+      "pages": [
+        "filesystem/about"
+      ]
     }
   ],
   "footerSocials": {
