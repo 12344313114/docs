@@ -34,7 +34,14 @@
           "pages": [
             "filesystem/about",
             "filesystem/example",
-            "filesystem/propFolder"
+            "filesystem/propFolder",
+            "filesystem/default",
+            "filesystem/propConfig",
+            "filesystem/reconcile",
+            "filesystem/prop",
+            "filesystem/set",
+            "filesystem/get",
+            "filesystem/delete"
           ]
         }
       ]
