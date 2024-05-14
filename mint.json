@@ -29,7 +29,8 @@
     {
       "group": "FileSystem API",
       "pages": [
-        "filesystem/about"
+        "filesystem/about",
+        "filesystem/example"
       ]
     }
   ],
