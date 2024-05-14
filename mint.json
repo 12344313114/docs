@@ -30,7 +30,8 @@
       "group": "FileSystem API",
       "pages": [
         "filesystem/about",
-        "filesystem/example"
+        "filesystem/example",
+        "filesystem/propFolder"
       ]
     }
   ],
