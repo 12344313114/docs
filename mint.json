@@ -27,11 +27,27 @@
       ]
     },
     {
-      "group": "FileSystem API",
+      "group": "Universal",
       "pages": [
-        "filesystem/about",
-        "filesystem/example",
-        "filesystem/propFolder"
+        {
+          "group": "FileSystem API",
+          "pages": [
+            "filesystem/about",
+            "filesystem/example",
+            "filesystem/propFolder"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Experiences",
+      "pages": [
+        {
+          "group": "Hellmet",
+          "pages": [
+            "hellmet/about"
+          ]
+        }
       ]
     }
   ],
