@@ -1,0 +1,24 @@
+---
+title: 'propFolder'
+description: 'Gets or Creates a new folder at the given path'
+---
+This will either get or create a new Folder at the provided path. If other folders in the path don't already exists, it will automatically create them too. Only returns the last created folder.
+```lua
+FileSystem.propFolder(path: string):Folder
+```
+<ParamField path="path" type="string" required>
+  Path of the folder
+</ParamField>
+<ResponseField name="returns" type="metatable" required>
+  Returns a new metetable for the created Folder
+</ResponseField>
+<CodeGroup>
+```lua Example.lua
+local FileSystem -- Require FileSystem API Here
+
+local HubFolder = FileSystem.propFolder("MyHub/Configs")
+-- Creates or Gets a Folder called MyHub
+-- Creates or Gets a Folder called Configs
+-- HubFolder is set to a Metetable for the Configs folder
+```
+</CodeGroup>
