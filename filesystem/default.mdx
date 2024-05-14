@@ -1,5 +1,17 @@
 ---
-title: '[WIP]'
-description: 'WORK IN PROGRESS'
+title: 'default'
+description: 'Gets the Default Folder'
 icon: 'code'
 ---
+<Warning>Use with caution, it could conflict with other similarly named configs</Warning>
+A Default Folder location for storing Configs
+```lua
+FileSystem.default
+```
+<CodeGroup>
+```lua Example.lua
+local FileSystem -- Require FileSystem API Here
+
+local DefaultFolder = FileSystem.default
+```
+</CodeGroup>

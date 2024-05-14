@@ -1,5 +1,41 @@
 ---
-title: '[WIP]'
-description: 'WORK IN PROGRESS'
+title: 'delete'
+description: 'Deletes `self` or `key` in `self`'
 icon: 'code'
 ---
+Used to delete folders, configs, or keys in configs.
+```lua
+self:delete(key: string)
+```
+<ParamField path="self" type="metatable" required>
+  The folder or config
+</ParamField>
+<ParamField path="key" type="string">
+  The key for the data to delete, only for configs
+</ParamField>
+<CodeGroup>
+```lua Folder_Example.lua
+local FileSystem -- Require FileSystem API Here
+
+local HubFolder = FileSystem.propFolder("MyHub/Configs")
+HubFolder:delete()
+-- Only deletes Configs folder, MyHub will stay
+```
+```lua Config_Example.lua
+local FileSystem -- Require FileSystem API Here
+
+local HubFolder = FileSystem.propFolder("MyHub/Configs")
+local Game1_Config = HubFolder:propConfig("Game1")
+Game1_Config:delete()
+-- Deletes config file
+```
+```lua Key_Example.lua
+local FileSystem -- Require FileSystem API Here
+
+local HubFolder = FileSystem.propFolder("MyHub/Configs")
+local Game1_Config = HubFolder:propConfig("Game1")
+Game1_Config:set("Example_Key","Hello World!")
+Game1_Config:delete("Example_Key")
+-- Deletes the key and data at the key
+```
+</CodeGroup>
