@@ -1,0 +1,29 @@
+---
+title: 'propConfig'
+description: 'Gets or Creates a new config `self`'
+icon: 'code'
+---
+This will either get or create a new Config at the provided Folder as `self`. Returns the config as a metatable.
+```lua
+self:propConfig(name: string): metatable
+```
+<ParamField path="self" type="metatable" required>
+  The folder to create the config in
+</ParamField>
+<ParamField path="name" type="string" required>
+  The folder to create the config in
+</ParamField>
+<ResponseField name="returns" type="metatable" required>
+  Returns a new config metatable
+</ResponseField>
+<CodeGroup>
+```lua Example.lua
+local FileSystem -- Require FileSystem API Here
+
+local HubFolder = FileSystem.propFolder("MyHub/Configs")
+local Game1_Config = HubFolder:propConfig("Game1")
+-- Creates new config in the HubFolder named Game1
+local Game2_Config = FileSystem.default:propConfig("Game2")
+-- Configs can also be created in a default folder
+```
+</CodeGroup>
