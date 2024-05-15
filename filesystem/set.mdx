@@ -1,5 +1,27 @@
 ---
-title: '[WIP]'
-description: 'WORK IN PROGRESS'
+title: 'set'
+description: 'Sets data to a specified key in a Config'
 icon: 'code'
 ---
+```lua
+self:set(key: string, data: {string, number, boolean, table})
+```
+<ParamField path="key" type="string" required>
+  The key in which to set the data in the config, used to access it later
+</ParamField>
+<ParamField path="data" type="string, number, boolean, table" required>
+  The data to set to the key, can be a string, number, boolean, or table
+</ParamField>
+<CodeGroup>
+```lua Example.lua
+local FileSystem -- Require FileSystem API Here
+
+local HubFolder = FileSystem.propFolder("MyHub/Configs")
+local Game1_Config = HubFolder:propConfig("Game1")
+Game1_Config:set("Example_Key1","Hello World!")
+Game1_Config:set("Example_Key2",1234567890)
+Game1_Config:set("Example_Key3",true)
+Game1_Config:set("Example_Key4",{true,false,1234567890,"Hello World!"})
+-- Sets all keys to the provided data
+```
+</CodeGroup>

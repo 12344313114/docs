@@ -1,5 +1,30 @@
 ---
-title: '[WIP]'
-description: 'WORK IN PROGRESS'
+title: 'prop'
+description: 'Gets or Sets data to a specified key in a Config'
 icon: 'code'
 ---
+Gets or Sets data to a specified key in a Config. If the `key` or `data` doesn't already exists, it will create it and return the data set. If the `key` and `data` are present, it will just return the `data`
+```lua
+self:prop(key: string, data: {string, number, boolean, table})
+```
+<ParamField path="key" type="string" required>
+  The key in which to set the data in the config if `key` isn't already present
+</ParamField>
+<ParamField path="data" type="string, number, boolean, table" required>
+  The data to set to the key if `key` isn't already present
+</ParamField>
+<ResponseField name="returns" type="string, number, boolean, table" required>
+  Returns the `data` from the `key`
+</ResponseField>
+<CodeGroup>
+```lua Example.lua
+local FileSystem -- Require FileSystem API Here
+
+local HubFolder = FileSystem.propFolder("MyHub/Configs")
+local Game1_Config = HubFolder:propConfig("Game1")
+local Hello_World_String = Game1_Config:prop("Example_Key","Hello World!")
+-- Gets or Sets the Example_Key key in the Config
+-- Reutrns the data if it already exists
+-- Sets data based on set parameters if not present already
+```
+</CodeGroup>

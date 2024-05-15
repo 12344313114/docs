@@ -1,5 +1,28 @@
 ---
-title: '[WIP]'
-description: 'WORK IN PROGRESS'
+title: 'get'
+description: 'Gets data to a specified key in a Config'
 icon: 'code'
 ---
+```lua
+self:get(key: string)
+```
+<ParamField path="key" type="string" required>
+  The key in which to get the data in the config
+</ParamField>
+<ResponseField name="returns" type="string, number, boolean, table, nil" required>
+  Returns the `data` from the `key` or nil if there is no data
+</ResponseField>
+<CodeGroup>
+```lua Example.lua
+local FileSystem -- Require FileSystem API Here
+
+local HubFolder = FileSystem.propFolder("MyHub/Configs")
+local Game1_Config = HubFolder:propConfig("Game1")
+local Hello_World_String = Game1_Config:get("Example_Key")
+if Hello_World_String ~= nil then
+    print(Hello_World_String)
+else
+    print("Hello_World_String doesn't exists, or has no data!")
+end
+```
+</CodeGroup>
