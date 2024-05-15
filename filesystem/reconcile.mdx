@@ -1,28 +1,39 @@
 ---
-title: 'get'
-description: 'Gets data to a specified key in a Config'
+title: 'reconcile'
+description: 'Merges data in a config with a template'
 icon: 'code'
 ---
+Merges data in a Config with data provided in a template. If the keys in the template already exists in the Config, nothing will happen to the key. If a key doesn't exists, it will add it and replace it with preset data. If there is keys that are not in the template, nothing will happen to them.
+
+* Remember that this does not change keys that already exist.
 ```lua
-self:get(key: string)
+self:reconcile(template: table)
 ```
-<ParamField path="key" type="string" required>
-  The key in which to get the data in the config
+<ParamField path="template" type="table" required>
+  The table to reconcile the data with
 </ParamField>
-<ResponseField name="returns" type="string, number, boolean, table, nil" required>
-  Returns the `data` from the `key` or nil if there is no data
-</ResponseField>
 <CodeGroup>
 ```lua Example.lua
 local FileSystem -- Require FileSystem API Here
 
 local HubFolder = FileSystem.propFolder("MyHub/Configs")
 local Game1_Config = HubFolder:propConfig("Game1")
-local Hello_World_String = Game1_Config:get("Example_Key")
-if Hello_World_String ~= nil then
-    print(Hello_World_String)
-else
-    print("Hello_World_String doesn't exists, or has no data!")
+Game1_Config:set("Example_Key3", true)
+
+local dataTemplate = {
+  ["Example_Key1"] = 1234567890,
+  ["Example_Key2"] = true,
+  ["Example_Key3"] = false,
+  ["Example_Key5"] = "Hello World!",
+  ["Example_Key6"] = {
+    "Hello World!",
+    false
+  }
+}
+-- Template of data to be reconciled.
+local Hello_World_String = Game1_Config:reconcile(dataTemplate)
+-- All data in the table will be added from the template.
+-- Example_Key3 will not be affected, as the key already exists in the Config
 end
 ```
 </CodeGroup>
