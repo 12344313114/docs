@@ -43,6 +43,12 @@
             "filesystem/get",
             "filesystem/delete"
           ]
+        },
+        {
+          "group": "Interface Builder API",
+          "pages": [
+            "interfacebuilder/about"
+          ]
         }
       ]
     },
